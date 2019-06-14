@@ -1,0 +1,288 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #F2F2EE;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #292D2F;
+  color: #F2F2EE;
+  position: relative;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.brand-title a, .navbar-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0 1rem;
+  -webkit-transition: font-weight 0.2s;
+  transition: font-weight 0.2s;
+  line-height: 100%;
+  display: inline-block;
+}
+
+.brand-title a:hover, .navbar-links a:hover {
+  color: #F2F2EE;
+  font-weight: bolder;
+}
+
+/* End Nav Bar */
+/* start home/index */
+.home-index {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60vh;
+  margin-top: 2rem;
+}
+
+.home-index-container {
+  height: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 40%;
+  border-radius: 1rem;
+  background: #292D2F;
+  color: #F2F2EE;
+}
+
+/* end of home/index */
+/* start home/about */
+.home-about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60vh;
+  margin-top: 2rem;
+}
+
+.home-about-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 40%;
+  background: #292D2F;
+  border-radius: 1rem;
+  color: white;
+}
+
+/* end home/about */
+/* start home/register */
+.register-container {
+  position: relative;
+  top: 0.5rem;
+  height: 65vh;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.register-container h2 {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.4rem;
+  background: #292D2F;
+  color: #F2F2EE;
+}
+
+.register-form {
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+.gender {
+  position: relative;
+  top: -0.75rem;
+  padding-bottom: 1.0rem;
+  font-size: 1.2rem;
+}
+
+.gender select {
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.register-form input {
+  width: 100%;
+  padding-top: 1.2rem;
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 1px solid #767670;
+  outline: none;
+  background: #F2F2EE;
+}
+
+.register-form label {
+  position: absolute;
+  top: -0.5rem;
+  font-size: 1.3rem;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.register-form label::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -0.5rem;
+  border-bottom: 3px solid #777D7B;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.register-form input:focus + .label-name .content-name,
+.register-form input:valid + .label-name .content-name {
+  -webkit-transform: translateY(-1.5rem);
+          transform: translateY(-1.5rem);
+}
+
+.register-form input:focus + .label-name::after,
+.register-form input:valid + .label-name::after {
+  opacity: 1;
+}
+
+.register-submit {
+  position: relative;
+  top: -1rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 1.2rem;
+}
+
+.register-submit input {
+  background: #292D2F;
+  outline: none;
+  border: 1px solid black;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.have-an-account {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.have-an-account a {
+  text-decoration: none;
+  margin-left: 0.5rem;
+  color: #F2F2EE;
+  padding: 0.2rem 0.5rem;
+  background: #292D2F;
+  border-radius: 0.5rem;
+}
+
+.register-submit input:hover,
+.have-an-account a:hover {
+  -webkit-transform: translateY(-0.2rem);
+          transform: translateY(-0.2rem);
+  -webkit-box-shadow: 0 0.2rem 0.2rem #767670;
+          box-shadow: 0 0.2rem 0.2rem #767670;
+}
+
+.register-submit input:active,
+.have-an-account a:active {
+  -webkit-transform: translateY(0rem);
+          transform: translateY(0rem);
+}
+
+.register_err {
+  position: absolute;
+  line-height: 1.5rem;
+  color: white;
+}
+
+/* Start of home/login */
+/*# sourceMappingURL=style.css.map */

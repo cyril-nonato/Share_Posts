@@ -1,0 +1,234 @@
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$colors: (
+key1: #292D2F, 
+key2: #767670,
+key3: #777D7B,
+key4: #878C89,
+key5: #F2F2EE,
+key6: red
+);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: map-get($colors, key5);
+}
+
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: map-get($colors, key1);
+  color: map-get($colors,key5);
+  position: relative;
+
+}
+.brand-title {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  text-transform: uppercase;
+  padding: 1rem;  
+}
+
+
+.brand-title a ,.navbar-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0 1rem;
+  transition: font-weight 0.2s;
+  line-height: 100%;
+  display: inline-block;
+}
+
+.brand-title a:hover ,.navbar-links a:hover {
+  color: map-get($colors, key5);
+  font-weight: bolder;
+}
+/* End Nav Bar */
+
+/* start home/index */
+
+.home-index {
+  @include flexCenter();
+  height: 60vh;
+  margin-top: 2rem;
+}
+
+.home-index-container {
+  height: 10rem;
+  @include flexCenter();
+  flex-direction: column;
+  width: 40%;
+  border-radius: 1rem;
+  background: map-get($colors,key1);
+  color: map-get($colors,key5);
+}
+/* end of home/index */
+
+/* start home/about */
+.home-about {
+  @include flexCenter();
+  height: 60vh;
+  margin-top: 2rem;
+}
+
+.home-about-container {
+  @include flexCenter();
+  flex-direction: column;
+  width: 40%;
+  background: map-get($colors,key1);
+  border-radius: 1rem;
+  color: white;
+}
+/* end home/about */
+
+/* start home/register */
+.register-container {
+  position: relative;
+  top: 0.5rem;
+  height: 65vh;
+  width: 40%;
+  margin: 0 auto;
+}
+.register-container h2 {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.4rem;
+  background: map-get($colors, key1);
+  color: map-get($colors,key5);
+}
+
+.register-form {
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+.gender {
+  position: relative;
+  top: -0.75rem;
+  padding-bottom: 1.0rem;
+  font-size: 1.2rem;
+}
+.gender select {
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.register-form input {
+  width: 100%;
+  padding-top: 1.2rem;
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 1px solid map-get($colors, key2);
+  outline: none;
+  background: map-get($colors, key5);
+}
+
+.register-form label {
+  position: absolute;
+  top: -0.5rem;
+  font-size: 1.3rem;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.register-form label::after {
+  content: "";
+  position: absolute;
+  width:100%;
+  left: 0;
+  bottom: -0.5rem;
+  border-bottom: 3px solid map-get($colors,key3);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 0;
+  transition: transform 0.3s;
+}
+
+.register-form input:focus + .label-name .content-name,
+.register-form input:valid + .label-name .content-name {
+  transform: translateY(-1.5rem);
+}
+
+.register-form input:focus + .label-name::after,
+.register-form input:valid + .label-name::after {
+  opacity: 1;
+}
+
+.register-submit {
+  position: relative;
+  top: -1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+}
+
+.register-submit input {
+  background: map-get($colors,key1);
+  outline: none;
+  border: 1px solid black;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+
+.have-an-account {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  @include flexCenter();
+}
+
+.have-an-account a {
+  text-decoration: none;
+  margin-left: 0.5rem;
+  color:  map-get($colors,key5);
+  padding: 0.2rem 0.5rem;
+  background: map-get($colors,key1);
+  border-radius: 0.5rem;
+}
+
+.register-submit input:hover,
+.have-an-account a:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.2rem 0.2rem map-get($colors, key2);
+}
+
+.register-submit input:active,
+.have-an-account a:active {
+  transform: translateY(0rem);
+}
+
+.register_err {
+  position: absolute;
+  line-height: 1.5rem;
+  color: white;
+}
+/* Start of home/login */
