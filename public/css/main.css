@@ -1,0 +1,386 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  resize: none;
+}
+
+/***** Universal *****/
+body {
+  margin: 0;
+  font-size: 16px;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #F2F2EE;
+}
+
+/* Flash message */
+.success {
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+}
+
+.success div {
+  margin: 0 20%;
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  border: 0.5px solid #90ee90;
+  border-bottom: 3px solid #90ee90;
+  -webkit-box-shadow: 0 0.2rem 1rem #878C89;
+          box-shadow: 0 0.2rem 1rem #878C89;
+}
+
+/* End of Flash Message */
+/* Buttons */
+.btn {
+  display: block;
+  background: #292D2F;
+  outline: none;
+  border: 1px solid black;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.btn:hover {
+  -webkit-transform: translateY(-0.2rem);
+          transform: translateY(-0.2rem);
+  -webkit-box-shadow: 0 0.2rem 0.2rem #767670;
+          box-shadow: 0 0.2rem 0.2rem #767670;
+}
+
+.btn:active {
+  -webkit-transform: translateY(0rem);
+          transform: translateY(0rem);
+}
+
+/* End buttons */
+/* Form Format = register,login,add */
+.form_format {
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+.form_format input, .form_format textarea {
+  width: 100%;
+  padding-top: 1.2rem;
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 1px solid #767670;
+  outline: none;
+  background: #F2F2EE;
+}
+
+.form_format textarea {
+  font-size: 1rem;
+  height: 120px;
+}
+
+.form_format label {
+  position: absolute;
+  top: -0.5rem;
+  font-size: 1.3rem;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.form_format label::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -0.5rem;
+  border-bottom: 0.3rem solid #777D7B;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.form_format input:focus + .label-name .content-name,
+.form_format input:valid + .label-name .content-name {
+  -webkit-transform: translateY(-1.5rem);
+          transform: translateY(-1.5rem);
+}
+
+.form_format textarea:focus + .label-name .content-name,
+.form_format textarea:valid + .label-name .content-name {
+  -webkit-transform: translateY(-6.5rem);
+          transform: translateY(-6.5rem);
+}
+
+.form_format input:focus + .label-name::after,
+.form_format input:valid + .label-name::after {
+  opacity: 1;
+}
+
+.form_format textarea:focus + .label-name::after,
+.form_format textarea:valid + .label-name::after {
+  opacity: 1;
+}
+
+.form_err {
+  position: absolute;
+  line-height: 1.5rem;
+  color: red;
+}
+
+/* End Form Format = register,login,add */
+/***** End of Universal *****/
+/* Navigation Bar */
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #292D2F;
+  color: #F2F2EE;
+  position: relative;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.brand-title a, .navbar-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0 1rem;
+  -webkit-transition: font-weight 0.2s;
+  transition: font-weight 0.2s;
+  line-height: 100%;
+  display: inline-block;
+}
+
+.brand-title a:hover, .navbar-links a:hover {
+  color: #F2F2EE;
+  font-weight: bolder;
+}
+
+/* End Nav Bar */
+/* start home/index */
+.home-index {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60vh;
+  margin-top: 2rem;
+}
+
+.home-index-container {
+  height: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 40%;
+  border-radius: 1rem;
+  background: #292D2F;
+  color: #F2F2EE;
+}
+
+/* end of home/index */
+/* start home/about */
+.home-about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60vh;
+  margin-top: 2rem;
+}
+
+.home-about-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 40%;
+  background: #292D2F;
+  border-radius: 1rem;
+  color: white;
+}
+
+.section-title {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.4rem;
+  background: #292D2F;
+  color: #F2F2EE;
+}
+
+/* end home/about */
+/* start home/register */
+.home-register {
+  position: relative;
+  top: 1rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.home-register-container {
+  width: 40%;
+}
+
+.gender {
+  position: relative;
+  top: -0.75rem;
+  padding-bottom: 1.0rem;
+  font-size: 1.2rem;
+}
+
+.gender select {
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.register-submit {
+  position: relative;
+  top: -1rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+.register-submit a {
+  display: inline-block;
+}
+
+/* End of home/register */
+/* Start of home/login */
+.home-login {
+  position: relative;
+  top: 1rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.home-login-container {
+  width: 40%;
+}
+
+.login-submit {
+  position: relative;
+  top: -1rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+.login-submit a {
+  display: inline-block;
+}
+
+/* End home/login */
+/* Start posts/add */
+.posts-add {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.posts-add-container {
+  width: 40%;
+}
+
+.posts-add-container .btn {
+  margin: 0 auto;
+}
+/*# sourceMappingURL=main.css.map */

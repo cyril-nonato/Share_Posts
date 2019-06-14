@@ -38,21 +38,15 @@
           $data = [
             'users_id' => $_SESSION['id'],
             'title' => $_POST['title'],
-            'body' => $_POST['body'],
-            'title_err' => '',
-            'body_err' => ''
+            'body' => $_POST['body']
           ];
   
-          if(empty($data['title'])) {
-            $data['title_err'] = 'A title is required for your post';
-          }
-          if(empty($data['body'])) {
-            $data['body_err'] = 'Please input the content of your post';
-          }
+
 
           switch(true) {
-            case !empty($data['body_err']):
-            case !empty($data['title_err']):
+            case empty($data['body']):
+            case empty($data['title']):
+              redirect('posts/add');
               break;
             default:
               $this->postModel->addPost($data);
@@ -65,8 +59,6 @@
         $data = [
           'title' => '',
           'body' => '',
-          'title_err' => '',
-          'body_err' => ''
         ];
   
         $this->view('posts/add',$data);

@@ -2,8 +2,8 @@
   <div>
     <h1><?php echo 'POSTS'?></h1>
   </div>
-  <?php flashRegister('success'); ?>
-  <?php flashRegister('delete_post'); ?>
+  <?php flashMessage('success'); ?>
+  <?php flashMessage('delete_post'); ?>
   <div> 
     <?php foreach($data['posts'] as $post): ?>
       <div>

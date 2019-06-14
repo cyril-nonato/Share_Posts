@@ -77,9 +77,8 @@
             default:
               $data['password'] = password_hash($data['password'],PASSWORD_DEFAULT);
               $this->userModel->register($data);
-              flashRegister('registered','You can now logged in','registered');
+              flashMessage('registered','You can now logged in');
               redirect('home/login');
-
           }
         }
       } else {
@@ -108,11 +107,6 @@
             'email_err' => '',
             'password_err' => ''
           ];
-
-          if(empty($data['email'])) {
-            $data['email'] = 'Please type your email address';
-            $this->view('home/login',$data);
-          } 
           
           if($this->userModel->checkEmailForAnyMatches($data)) {
             $loggedInUser = $this->userModel->login($data);

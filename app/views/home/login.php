@@ -1,23 +1,37 @@
 <?php require_once APPROOT . '/views/includes/header.php' ?>
-  <div class="home-login">
-    <div>
-    <?php flashRegister('registered') ?>
-    <form action="<?php echo URLROOT?>/home/login" method="POST">
-      <div class="home-login-email">
-        <label for="email">Email: </label>
-        <input type="text" name="email" value='<?php echo $data['email'] ?>'>
-        <p><?php echo $data['email_err']; ?></p>
-      </div>
-      <div class="home-login-password">
-        <label for="password">Password: </label>
-        <input type="password" name="password">
-        <p><?php echo $data['password_err']; ?></p>
-      </div>
-      <span>Don't have an account? <a href="<?php echo URLROOT ?>/home/register">Register Here</a></span>
-      <input type="submit" name="login" value="Login">
-    </form> 
+  <section class="home-login">
+    <div class="home-login-container">
+
+      <?php echo flashMessage('registered') ?>
+
+      <h2 class="section-title">Login</h2> 
+      <form action="<?php echo URLROOT?>/home/login" method="POST">
+        <div class="form_format">
+          <input type="text" name="email" required value="<?php echo $data['email'] ?>">
+          <label for="email" class="label-name">
+            <span class="content-name">Email:</span>
+          </label>
+          <div class="form_err"><?php echo $data['email_err'] ?></div>
+        </div>
+
+        <div class="form_format">
+          <input type="password" name="password" required value="<?php echo $data['password'] ?>">
+          <label for="password" class="label-name">
+            <span class="content-name">Password:</span>
+          </label>
+          <div class="form_err"><?php echo $data['password_err'] ?></div>
+        </div>
+        <div class="login-submit">
+            <input class="btn" type="submit" name="login" value="Login">
+          <div>
+            <span>Don't have an account?</span>
+            <a class="btn" href="<?php echo URLROOT ?>/home/login"> Register </a>
+          </div>
+        </div>
+          
+      </form>
+
     </div>
-    
-  </div>
+  </section>
 
 <?php require_once APPROOT . '/views/includes/footer.php' ?>
